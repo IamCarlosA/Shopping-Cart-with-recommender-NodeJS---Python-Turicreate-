@@ -1,0 +1,43 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="/">UscoGame</a>
+
+  <div  id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item">
+        <a class="nav-link" href="/cart"><i class="fa fa-shopping-cart"></i>&nbsp;Cart 
+        <span class="badge badge-secondary badge-pill">{{session.cart.totalQty}}</span>
+        </a> 
+      </li>
+        
+      {{#if user}}
+        
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i>&nbsp;
+          {{user.username}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/logout">Logout</a>
+          <a class="dropdown-item" href="/profile">My Profile</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+        
+        {{else}}
+        
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i>&nbsp;
+          Signup/Login
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/login">Login</a>
+          <a class="dropdown-item" href="/signup">Signup</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+        
+        {{/if}}  
+        
+    </ul>
+  </div>
+</nav>
